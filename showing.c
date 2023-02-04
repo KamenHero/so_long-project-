@@ -6,7 +6,7 @@
 /*   By: oryadi <oryadi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 18:08:08 by oryadi            #+#    #+#             */
-/*   Updated: 2023/02/03 23:05:09 by oryadi           ###   ########.fr       */
+/*   Updated: 2023/02/04 21:56:35 by oryadi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,8 @@ void	showing(t_all *all)
 
 	y = 0;
 	all->mlx.mlx = mlx_init();
+	if (all->component.countx > 5120 / 64 || all->component.county > 2880 / 64)
+		(ft_putendl_fd("Error : show me your resolution.", 2), exit (-1));
 	all->mlx.mlx_win = mlx_new_window(all->mlx.mlx, 64 * all->component.countx,
 			64 * all->component.county, "so_long");
 	while (all->component.map[y])
